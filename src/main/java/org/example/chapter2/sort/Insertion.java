@@ -3,6 +3,7 @@ package org.example.chapter2.sort;
 // 最坏的情况下需要 N²/2 次比较 和 N²/2 次交换
 // 最好的情况下需要 N-1 次比较和0次交换
 // 插入排序对于实际应用中的非随机数组有效
+// 适合小规模数组
 public class Insertion {
     public static void sort(Comparable[] a){
         for (int i = 1; i < a.length; i++) {
