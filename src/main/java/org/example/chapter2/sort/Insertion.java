@@ -11,6 +11,7 @@ public class Insertion {
                 if (less(a[j], a[j-1])) {
                     exch(a, j, j-1);
                 }else{
+                    // 当前值a[j] >= a[j-1] 时，此时退出交换循环，不需要继续向前比较了
                     break;
                 }
             }
