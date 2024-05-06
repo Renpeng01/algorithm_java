@@ -12,7 +12,7 @@ public class Selection {
                     min = j;
                 }
             }
-            exch(a,min,i);
+            exch(a,i,min);
         }
     }
 

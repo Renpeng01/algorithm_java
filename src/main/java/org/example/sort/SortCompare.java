@@ -9,14 +9,15 @@ public class SortCompare {
         Stopwatch timer = new Stopwatch();
         if (alg.equals("Insertion")) {
             Insertion.sort(a);
-        }
-        if (alg.equals("Selection")) {
+
+        }else if (alg.equals("Selection")) {
             Selection.sort(a);
+
         }
-        if (alg.equals("Shell")) {}
-        if (alg.equals("Merge")) {}
-        if (alg.equals("Quick")) {}
-        if (alg.equals("Heap")) {}
+//        if (alg.equals("Shell")) {}
+//        if (alg.equals("Merge")) {}
+//        if (alg.equals("Quick")) {}
+//        if (alg.equals("Heap")) {}
         return timer.elapsedTime();
     }
 
