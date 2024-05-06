@@ -48,7 +48,7 @@ public class SortCompare {
         String alg2 = "Selection";
         String alg3 = "Shell";
         String alg4 = "Merge";
-        int N = 1000;
+        int N = 10000;
         int T = 100;
         double t1 = timeRandomInput(alg1, N, T);
         double t2 = timeRandomInput(alg2, N, T);
