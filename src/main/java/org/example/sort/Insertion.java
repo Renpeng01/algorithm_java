@@ -6,6 +6,8 @@ import edu.princeton.cs.algs4.StdOut;
 public class Insertion {
     public static void sort(Comparable[] a) {
         for (int i = 1; i < a.length; i++) {
+
+            // 条件less(a[j], a[j - 1]) 的位置是关键
             for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
                 exch(a, j, j - 1);
             }
@@ -45,3 +47,5 @@ public class Insertion {
         show(a);
     }
 }
+
+// 所需的时间取决于输入元素的初始顺序
