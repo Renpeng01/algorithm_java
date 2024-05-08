@@ -57,7 +57,8 @@ public class Quick {
     }
 
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
+//        String[] a = StdIn.readAllStrings();
+        String[] a = {"R","A","T","E","L","E","P","U","I","M","Q","C","X","O","S"};
         sort(a);
         assert isSorted(a);
         show(a);
