@@ -23,7 +23,7 @@ public class MaxPQ<Key extends Comparable<Key>> {
 
     public Key delMax(){
         Key max = pq[1];
-        pq[1] = pq[N];
+        exch(1,N--);
         pq[N] = null;
         sink(1);
         return max;
