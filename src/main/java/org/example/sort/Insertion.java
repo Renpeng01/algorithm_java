@@ -3,6 +3,9 @@ package org.example.sort;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+
+// 所需的时间取决于输入中元素的初始顺序。对一个很大且其中的元素已经有序（或接近有序）的数组
+// 将会比随机顺序的数组要快的多
 public class Insertion {
     public static void sort(Comparable[] a) {
         for (int i = 1; i < a.length; i++) {
