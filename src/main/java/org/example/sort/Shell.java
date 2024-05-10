@@ -3,6 +3,9 @@ package org.example.sort;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Shell {
     public static void sort(Comparable[] a) {
         int N = a.length;
@@ -20,6 +23,28 @@ public class Shell {
             h = h / 3;
         }
 
+    }
+
+    public static void sort2(Comparable[] a) {
+        int N = a.length;
+        int h = 1;
+
+        ArrayList<Integer> hs = new ArrayList<>();
+        hs.add(h);
+        while (h < N / 3) {
+            h = 3 * h + 1;
+            hs.add(h);
+        }
+
+        for(int m = hs.size()-1; m >= 0; m--) {
+            h = hs.get(m);
+            for (int i = h; i < N; i++) {
+                for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
+                    exch(a, j, j - h);
+                }
+                show(a);
+            }
+        }
     }
 
     private static boolean less(Comparable v, Comparable w) {
@@ -51,7 +76,7 @@ public class Shell {
     public static void main(String[] args) {
 //        String[] a = StdIn.readAllStrings();
         String[] a = {"E","A","S","Y","S","H","E","L","L","Q","U","E","S","T","I","O","N"};
-        sort(a);
+        sort2(a);
 //        assert isSorted(a);
 //        show(a);
     }
