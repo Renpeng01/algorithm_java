@@ -15,6 +15,7 @@ public class Shell {
                 for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
                     exch(a, j, j - h);
                 }
+                show(a);
             }
             h = h / 3;
         }
@@ -48,10 +49,11 @@ public class Shell {
     }
 
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
+//        String[] a = StdIn.readAllStrings();
+        String[] a = {"E","A","S","Y","S","H","E","L","L","Q","U","E","S","T","I","O","N"};
         sort(a);
-        assert isSorted(a);
-        show(a);
+//        assert isSorted(a);
+//        show(a);
     }
 }
 
