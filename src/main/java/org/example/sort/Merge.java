@@ -22,6 +22,21 @@ public class Merge {
         merge(a, lo, mid, hi);
     }
 
+    private static void sort2(Comparable[] a, int lo, int hi) {
+        if (hi-lo <=15){
+            Insertion.sort(a);
+            return
+        }
+        if (hi <= lo) return;
+        int mid = lo + (hi - lo) / 2;
+        sort(a, lo, mid);
+        sort(a, mid + 1, hi);
+        if (less(a[mid], a[mid+1])){
+            return
+        }
+        merge(a, lo, mid, hi);
+    }
+
     public static void merge(Comparable[] a, int lo, int mid, int hi) {
         int i = lo, j = mid + 1;
         for (int k = lo; k <= hi; k++) {
