@@ -33,7 +33,7 @@ public class Merge {
             else if (less(aux[j], aux[i])) a[k] = aux[j++];
             else a[k] = aux[i++];
         }
-
+        show(a);
     }
 
     private static boolean less(Comparable v, Comparable w) {
@@ -63,10 +63,12 @@ public class Merge {
     }
 
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
+//        String[] a = StdIn.readAllStrings();
+        String[] a = {"A","E","Q","S","U","Y","E","I","N","O","S","T"};
+
         sort(a);
         assert isSorted(a);
-        show(a);
+//        show(a);
     }
 }
 
