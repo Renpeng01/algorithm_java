@@ -16,6 +16,29 @@ public class Insertion {
         }
     }
 
+
+    // 插入排序的哨兵，在插入排序的中线找出最小的元素并将其置于数组最左边，这样就能去掉内循环中的 j > 0 的操作
+    public static void sort2(Comparable[] a) {
+        int minIndex = 0;
+        for (int i = 1; i < a.length; i++) {
+            if (less(a[i],a[minIndex])){
+                minIndex = i;
+            }
+        }
+        exch(a,minIndex,0);
+
+
+        for (int i = 1; i < a.length; i++) {
+            // 条件less(a[j], a[j - 1]) 的位置是关键
+
+            int j = i;
+            while (less(a[j], a[j - 1])){
+                exch(a, j, j - 1);
+                j--;
+            }
+        }
+    }
+
     private static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
     }
@@ -43,8 +66,9 @@ public class Insertion {
     }
 
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
-        sort(a);
+//        String[] a = StdIn.readAllStrings();
+        String[] a = {"E","A","S","Y","S","H","E","L","L","Q","U","E","S","T","I","O","N"};
+        sort2(a);
         assert isSorted(a);
         show(a);
     }
