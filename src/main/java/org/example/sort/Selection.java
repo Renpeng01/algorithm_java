@@ -3,6 +3,9 @@ package org.example.sort;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+// 运行时间和输入无关
+// 数据移动最少 每次交换都坏改变两个数组元素的值
+
 public class Selection {
     public static void sort(Comparable[] a) {
         for(int i = 0; i < a.length - 1; i++) {
