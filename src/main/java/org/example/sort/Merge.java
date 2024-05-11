@@ -25,7 +25,7 @@ public class Merge {
     private static void sort2(Comparable[] a, int lo, int hi) {
         if (hi-lo <=15){
             Insertion.sort(a);
-            return
+            return;
         }
         if (hi <= lo) return;
         int mid = lo + (hi - lo) / 2;
