@@ -45,5 +45,72 @@ public class chapter2 {
         return queue;
     }
 
+    // 2.2.16
+    private static void naturalMergesort(Comparable[] array) {
+        if (array == null || array.length == 1) {
+            return;
+        }
+        Comparable[] aux = new Comparable[array.length];
+
+        int low = 0;
+        int middle;
+        int high;
+
+        while (true) {
+            middle = findSortedSubArray(array, low);
+            if (middle == array.length - 1) {
+                if (low == 0) // Array is sorted
+                    break;
+                else {
+                    low = 0;
+                    continue;
+                }
+            }
+            high = findSortedSubArray(array, middle + 1);
+            merge(array, aux, low, middle, high);
+            low = (high == array.length - 1) ? 0 : high + 1;
+        }
+    }
+
+    private static int findSortedSubArray(Comparable[] array, int start) {
+        for (int i = start + 1; i < array.length; i++) {
+            if (array[i].compareTo(array[i - 1]) < 0) {
+                return i - 1;
+            }
+        }
+        return array.length - 1;
+    }
+
+
+
+
+    public static void merge (Comparable[] array, Comparable[] aux, int low, int middle, int high) {
+        for (int i = low; i <= high; i++) {
+            aux[i] = array[i];
+        }
+
+        int leftIndex = low;
+        int rightIndex = middle + 1;
+        int arrayIndex = low;
+
+        while (leftIndex <= middle && rightIndex <= high) {
+            if (aux[leftIndex].compareTo(aux[rightIndex]) <= 0) {
+                array[arrayIndex] = aux[leftIndex];
+                leftIndex++;
+            } else {
+                array[arrayIndex] = aux[rightIndex];
+                rightIndex++;
+            }
+
+            arrayIndex++;
+        }
+
+        while (leftIndex <= middle) {
+            array[arrayIndex] = aux[leftIndex];
+            leftIndex++;
+            arrayIndex++;
+        }
+    }
+
 
 }
