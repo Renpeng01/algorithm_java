@@ -1,10 +1,6 @@
 package exercises;
 
 import edu.princeton.cs.algs4.Queue;
-import jdk.jfr.Frequency;
-
-import java.util.Comparator;
-import java.util.concurrent.ConcurrentMap;
 
 public class chapter2 {
 
