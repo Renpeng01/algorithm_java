@@ -32,7 +32,7 @@ public class Merge {
         sort(a, lo, mid);
         sort(a, mid + 1, hi);
         if (less(a[mid], a[mid+1])){
-            return
+            return;
         }
         merge(a, lo, mid, hi);
     }
