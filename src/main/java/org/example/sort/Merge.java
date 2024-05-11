@@ -48,7 +48,7 @@ public class Merge {
             else if (less(aux[j], aux[i])) a[k] = aux[j++];
             else a[k] = aux[i++];
         }
-        show(a);
+//        show(a);
     }
 
     private static boolean less(Comparable v, Comparable w) {
