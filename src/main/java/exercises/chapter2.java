@@ -112,6 +112,19 @@ public class chapter2 {
         }
     }
 
+    // 2.2.20
+    public static int[] indirectSort(Comparable[] a){
+
+        int[] perm = new int[a.length];
+        for (int i = 0; i < perm.length; i++) {
+            perm[i] = i;
+        }
+
+        return null;
+    }
+
+
+
     // 2.2.21
     public static Comparable triplicate(Comparable[] a, Comparable[] b, Comparable[] c) {
         Merge.sort(a);
