@@ -17,12 +17,41 @@ public class Quick {
         sort(a, j + 1, hi);
     }
 
+    // 哨兵模式的快排
+    public static void sort2(Comparable[] a) {
+        StdRandom.shuffle(a);
+
+        int maxIndex = 0;
+        for (int i = 1; i < a.length; i++) {
+            if (a[i].compareTo(a[maxIndex]) > 0) {
+                maxIndex = i;
+            }
+        }
+        exch(a, maxIndex, a.length - 1);
+        sort(a, 0, a.length - 1);
+    }
+
     private static int partition(Comparable[] a, int lo, int hi) {
         int i = lo, j = hi + 1;
         Comparable v = a[lo];
         while (true) {
             while (less(a[++i], v)) if (i == hi) break; // 如果 a[lo] 是整个集合的最大值，则会走这个逻辑
             while (less(v, a[--j])) if (j == lo) break; // 如果 a[lo] 是整个集合的最小值，则会走这个逻辑
+            if (i >= j) break;
+            exch(a, i, j);
+        }
+        exch(a, lo, j);
+        return j;
+    }
+
+    private static int partition2(Comparable[] a, int lo, int hi) {
+        int i = lo, j = hi + 1;
+        Comparable v = a[lo];
+        while (true) {
+            while (less(a[++i], v)) {
+            }
+            while (less(v, a[--j])) {
+            }
             if (i >= j) break;
             exch(a, i, j);
         }
@@ -58,7 +87,7 @@ public class Quick {
 
     public static void main(String[] args) {
 //        String[] a = StdIn.readAllStrings();
-        String[] a = {"R","A","T","E","L","E","P","U","I","M","Q","C","X","O","S"};
+        String[] a = {"R", "A", "T", "E", "L", "E", "P", "U", "I", "M", "Q", "C", "X", "O", "S"};
         sort(a);
         assert isSorted(a);
         show(a);
