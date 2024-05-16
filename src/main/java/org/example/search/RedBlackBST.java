@@ -84,6 +84,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
             h = rotateLeft(h);
         }
 
+        //这里不能用else if
         if (isRed(h.left) && isRed(h.left.left)) {
             h = rotateRight(h);
         }
