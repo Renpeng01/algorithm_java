@@ -1,5 +1,7 @@
 package org.example.graph;
 
+
+// 连通分量
 public class CC {
     private boolean[] marked;
     private int[] id;
