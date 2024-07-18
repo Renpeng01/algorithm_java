@@ -25,7 +25,6 @@ public class BinarySearch {
         int indexExist = rank(5,arr);
         System.out.printf("exist index: %d\n",indexExist);
 
-
         int indexInexist = rank(6,arr);
         System.out.printf("inexist index: %d",indexInexist);
     }
