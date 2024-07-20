@@ -3,12 +3,12 @@ package org.example.graph;
 import java.util.Arrays;
 
 // quick-union
-public class UF1 {
+public class QuickUnionUF {
     private int[] id;
     private int count;
     private int[] sz;
 
-    public UF1(int N) {
+    public QuickUnionUF(int N) {
         count = N;
         id = new int[N];
         for (int i = 0; i < N; i++) {
@@ -62,7 +62,7 @@ public class UF1 {
     }
 
     public static void main(String[] args){
-        UF1 uf = new UF1(10);
+        QuickUnionUF uf = new QuickUnionUF(10);
         // 9-0
         // 3-4
         // 5-8

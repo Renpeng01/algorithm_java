@@ -3,12 +3,12 @@ package org.example.graph;
 import java.util.Arrays;
 
 // quick-find
-public class UF {
+public class QuickFindUF {
 
     private int[] id; // 分量id（以触点作为索引）
     private int count; // 分量数量
 
-    public UF(int N){
+    public QuickFindUF(int N){
         count = N;
         id = new int[N];
         for (int i = 0; i < N;i++){
@@ -49,7 +49,7 @@ public class UF {
     }
 
     public static void main(String[] args){
-        UF uf = new UF(10);
+        QuickFindUF uf = new QuickFindUF(10);
         // 9-0
         // 3-4
         // 5-8
