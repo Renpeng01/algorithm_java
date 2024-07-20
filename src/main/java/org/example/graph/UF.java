@@ -1,7 +1,7 @@
 package org.example.graph;
 
-import java.net.IDN;
 
+// quick-find
 public class UF {
 
     private int[] id; // 分量id（以触点作为索引）
