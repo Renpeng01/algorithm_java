@@ -1,5 +1,6 @@
 package org.example.graph;
 
+import java.util.Arrays;
 
 // quick-find
 public class UF {
@@ -20,6 +21,7 @@ public class UF {
         int pID = find(p);
         int qID = find(q);
         if (pID == qID){
+            System.out.println(Arrays.toString(id));
             return;
         }
         for(int i = 0; i < id.length;i++){
@@ -28,6 +30,7 @@ public class UF {
             }
         }
         count--;
+        System.out.println(Arrays.toString(id));
     }
 
     // 返回给定触点所在的连通分量的标识符
@@ -43,5 +46,25 @@ public class UF {
     // 返回所有连通分量的数量
     public int count(){
         return count;
+    }
+
+    public static void main(String[] args){
+        UF uf = new UF(10);
+        // 9-0
+        // 3-4
+        // 5-8
+        // 7-2
+        // 2-1
+        // 5-7
+        // 0-3
+        // 4-2
+        uf.union(9,0);
+        uf.union(3,4);
+        uf.union(5,8);
+        uf.union(7,2);
+        uf.union(2,1);
+        uf.union(5,7);
+        uf.union(0,3);
+        uf.union(4,2);
     }
 }

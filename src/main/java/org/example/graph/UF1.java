@@ -1,5 +1,7 @@
 package org.example.graph;
 
+import java.util.Arrays;
+
 // quick-union
 public class UF1 {
     private int[] id;
@@ -24,6 +26,7 @@ public class UF1 {
         int i = find(p);
         int j = find(q);
         if (i == j) {
+            System.out.println(Arrays.toString(id));
             return;
         }
         if (sz[i] < sz[j]) {
@@ -33,6 +36,7 @@ public class UF1 {
             id[j] = i;
             sz[i] += sz[j];
         }
+        System.out.println(Arrays.toString(id));
         count--;
     }
 
@@ -52,5 +56,25 @@ public class UF1 {
     // 返回所有连通分量的数量
     public int count() {
         return count;
+    }
+
+    public static void main(String[] args){
+        UF1 uf = new UF1(10);
+        // 9-0
+        // 3-4
+        // 5-8
+        // 7-2
+        // 2-1
+        // 5-7
+        // 0-3
+        // 4-2
+        uf.union(9,0);
+        uf.union(3,4);
+        uf.union(5,8);
+        uf.union(7,2);
+        uf.union(2,1);
+        uf.union(5,7);
+        uf.union(0,3);
+        uf.union(4,2);
     }
 }
