@@ -29,13 +29,15 @@ public class UF1 {
             System.out.println(Arrays.toString(id));
             return;
         }
-        if (sz[i] < sz[j]) {
-            id[i] = j;
-            sz[j] += sz[i];
-        }else{
-            id[j] = i;
-            sz[i] += sz[j];
-        }
+
+        id[i] = j;
+//        if (sz[i] < sz[j]) {
+//            id[i] = j;
+//            sz[j] += sz[i];
+//        }else{
+//            id[j] = i;
+//            sz[i] += sz[j];
+//        }
         System.out.println(Arrays.toString(id));
         count--;
     }
