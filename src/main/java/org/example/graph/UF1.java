@@ -26,19 +26,20 @@ public class UF1 {
         int i = find(p);
         int j = find(q);
         if (i == j) {
-            System.out.println(Arrays.toString(id));
+            System.out.printf("id %s\n",Arrays.toString(id));
+            System.out.printf("sz %s\n",Arrays.toString(sz));
             return;
         }
 
-        id[i] = j;
-//        if (sz[i] < sz[j]) {
-//            id[i] = j;
-//            sz[j] += sz[i];
-//        }else{
-//            id[j] = i;
-//            sz[i] += sz[j];
-//        }
-        System.out.println(Arrays.toString(id));
+        if (sz[i] < sz[j]) {
+            id[i] = j;
+            sz[j] += sz[i];
+        }else{
+            id[j] = i;
+            sz[i] += sz[j];
+        }
+        System.out.printf("id %s\n",Arrays.toString(id));
+        System.out.printf("sz %s\n",Arrays.toString(sz));
         count--;
     }
 
