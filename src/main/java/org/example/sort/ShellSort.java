@@ -36,3 +36,5 @@ public class ShellSort extends Example {
         assert isSorted(a);
     }
 }
+
+// 希尔排序比插入排序和选择排序要快，并且数组越大，优势越大
