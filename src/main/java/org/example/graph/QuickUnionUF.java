@@ -51,14 +51,24 @@ public class QuickUnionUF {
         return p;
     }
 
+    //路径压缩 https://senlinzhan.github.io/2015/01/14/unionfind%E7%AE%97%E6%B3%95/
+    // 折半压缩
+    int findPathCompress1(int p) {
+        while (p != id[p]) {
+            id[p] = id[id[p]];
+            p = id[p];
+        }
+        return p;
+    }
 
+    //完全压缩
     int findPathCompress(int p) {
         int root = p;
         while (root != id[root]) {
             root = id[root];
         }
 
-        // 路径压缩
+        // 完全路径压缩
         for (int i = root; i != id[root]; i = id[root]) {
             id[i] = root;
         }
