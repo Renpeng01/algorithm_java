@@ -16,7 +16,7 @@ public class QuickUnionUF {
         }
 
         sz = new int[N];
-        for (int i = 0; i < N; i++){
+        for (int i = 0; i < N; i++) {
             sz[i] = 1;
         }
     }
@@ -26,20 +26,20 @@ public class QuickUnionUF {
         int i = find(p);
         int j = find(q);
         if (i == j) {
-            System.out.printf("id %s\n",Arrays.toString(id));
-            System.out.printf("sz %s\n",Arrays.toString(sz));
+            System.out.printf("id %s\n", Arrays.toString(id));
+            System.out.printf("sz %s\n", Arrays.toString(sz));
             return;
         }
 
         if (sz[i] < sz[j]) {
             id[i] = j;
             sz[j] += sz[i];
-        }else{
+        } else {
             id[j] = i;
             sz[i] += sz[j];
         }
-        System.out.printf("id %s\n",Arrays.toString(id));
-        System.out.printf("sz %s\n",Arrays.toString(sz));
+        System.out.printf("id %s\n", Arrays.toString(id));
+        System.out.printf("sz %s\n", Arrays.toString(sz));
         count--;
     }
 
@@ -49,6 +49,20 @@ public class QuickUnionUF {
             p = id[p];
         }
         return p;
+    }
+
+
+    int findPathCompress(int p) {
+        int root = p;
+        while (root != id[root]) {
+            root = id[root];
+        }
+
+        // 路径压缩
+        for (int i = root; i != id[root]; i = id[root]) {
+            id[i] = root;
+        }
+        return root;
     }
 
     // 判断2个触点是否存在于同一个分量之上
@@ -61,7 +75,7 @@ public class QuickUnionUF {
         return count;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         QuickUnionUF uf = new QuickUnionUF(10);
         // 9-0
         // 3-4
@@ -71,13 +85,13 @@ public class QuickUnionUF {
         // 5-7
         // 0-3
         // 4-2
-        uf.union(9,0);
-        uf.union(3,4);
-        uf.union(5,8);
-        uf.union(7,2);
-        uf.union(2,1);
-        uf.union(5,7);
-        uf.union(0,3);
-        uf.union(4,2);
+        uf.union(9, 0);
+        uf.union(3, 4);
+        uf.union(5, 8);
+        uf.union(7, 2);
+        uf.union(2, 1);
+        uf.union(5, 7);
+        uf.union(0, 3);
+        uf.union(4, 2);
     }
 }
