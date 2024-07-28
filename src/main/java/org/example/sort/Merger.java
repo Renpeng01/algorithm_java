@@ -31,8 +31,12 @@ public class Merger extends Example {
 
 
         // 如果a[mid] 小于等于 a[mid+1] 则2个、部分已经是有序的，不需要merger了
-        merge(a, lo, mid, hi);
-        show(a);
+
+        if (less(a[mid + 1], a[mid])){
+            merge(a, lo, mid, hi);
+            show(a);
+        }
+
     }
 
     public static void merge(Comparable[] a, int lo, int mid, int hi) {
@@ -58,7 +62,7 @@ public class Merger extends Example {
 
     public static void main(String[]args){
         String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
-        sort1(a);
+        sort(a);
 //        show(a);
         assert isSorted(a);
     }
