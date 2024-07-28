@@ -60,6 +60,10 @@ public class Merger extends Example {
         }
     }
 
+    public static void merge2(Comparable[] a, int lo, int mid, int hi){
+
+    }
+
     public static void main(String[]args){
         String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
         sort(a);
