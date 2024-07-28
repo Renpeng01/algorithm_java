@@ -5,7 +5,10 @@ import edu.princeton.cs.algs4.StdRandom;
 public class QuickSort extends Example {
     public static void sort(Comparable[] a) {
         // 保持随机性，也可以在partition中随机找一个元素作为需要指定的元素
+        // 防止出现最坏情况
         StdRandom.shuffle(a);
+
+        sort(a,0,a.length-1);
     }
 
     private static void sort(Comparable[] a, int lo, int hi) {
@@ -14,9 +17,10 @@ public class QuickSort extends Example {
         }
 
         int j = partition(a, lo, hi);
+        System.out.printf("index: %d ",j);
+        show(a);
         sort(a, lo, j - 1);
         sort(a, j + 1, hi);
-
     }
 
     // 切分过程中总能排定一个元素
@@ -66,6 +70,16 @@ public class QuickSort extends Example {
         sort(a, lo, lt - 1);
         sort(a, gt + 1, hi);
 
+    }
+
+    public static void main(String[] args){
+        String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
+//        sort(a);
+//        assert isSorted(a);
+        show(a);
+        int j = partition(a,0,a.length-1);
+        System.out.println(j);
+        show(a);
     }
 }
 
