@@ -25,13 +25,18 @@ public class Merger extends Example {
         if (hi <= lo) {
             return;
         }
+
+        // 优化： 小规模数组用插入排序
+        if ((hi - lo) < 16){
+            InsertSort.sortForPartition(a,lo,hi);
+            return;
+        }
         int mid = lo + (hi - lo) / 2;
         sort(a, lo, mid);
         sort(a, mid + 1, hi);
 
 
-        // 如果a[mid] 小于等于 a[mid+1] 则2个、部分已经是有序的，不需要merger了
-
+        // 优化：如果a[mid] 小于等于 a[mid+1] 则2个、部分已经是有序的，不需要merger了
         if (less(a[mid + 1], a[mid])){
             merge2(a, lo, mid, hi);
             show(a);

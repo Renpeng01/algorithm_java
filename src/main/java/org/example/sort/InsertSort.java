@@ -4,19 +4,35 @@ public class InsertSort extends Example {
     public static void sort(Comparable[] a) {
         for (int i = 1; i < a.length; i++) {
             for (int j = i; j > 0; j--) {
-                if (less(a[j], a[j-1])){
-                    exch(a,j, j-1);
+                if (less(a[j], a[j - 1])) {
+                    exch(a, j, j - 1);
                 }
             }
             show(a);
         }
     }
 
-    public static void main(String[] args) {
-        String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
-        sort(a);
+    public static void sortForPartition(Comparable[] a, int lo, int hi) {
+        for (int i = lo + 1; i <= hi; i++) {
+            for (int j = i; j > lo; j--) {
+                if (less(a[j], a[j - 1])) {
+                    exch(a, j, j - 1);
+                }
+            }
+//            show(a);
+        }
+    }
 
-        assert isSorted(a);
+
+    public static void main(String[] args) {
+//        String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
+//        sort(a);
+//
+//        assert isSorted(a);
+
+        Integer[] a= {9,9,9,4,3,2,1,9,9,9};
+        sortForPartition(a,3,6);
+        show(a);
     }
 }
 
