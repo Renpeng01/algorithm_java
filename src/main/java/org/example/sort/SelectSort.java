@@ -7,6 +7,9 @@ public class SelectSort extends Example {
         if (a == null || a.length == 0) {
             return;
         }
+
+
+        show(a);
         for (int i = 0; i < a.length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < a.length; j++) {
@@ -15,15 +18,16 @@ public class SelectSort extends Example {
                     minIndex = j;
                 }
             }
-            exch(a,minIndex,i);
+            exch(a, minIndex, i);
+            show(a);
         }
     }
 
     public static void main(String[] args) {
-        Integer[] a = {1,3,6,4,9,1,2,4};
-        show(a);
+        String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
+
         sort(a);
-        show(a);
+
         assert isSorted(a);
     }
 }

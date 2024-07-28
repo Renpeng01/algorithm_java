@@ -8,14 +8,14 @@ public class InsertSort extends Example {
                     exch(a,j, j-1);
                 }
             }
+            show(a);
         }
     }
 
     public static void main(String[] args) {
-        Integer[] a = {1,3,6,4,9,1,2,4};
-        show(a);
+        String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
         sort(a);
-        show(a);
+
         assert isSorted(a);
     }
 }
