@@ -4,8 +4,20 @@ public class Merger extends Example {
 
     private static Comparable[] aux;
 
+    // 自底向上
+    public static void sort1(Comparable[] a){
+        aux = new Comparable[a.length];
+        for(int sz = 1; sz < a.length; sz = sz + sz){
+            for(int lo = 0; lo <a.length-sz; lo += sz){
+                merge(a,lo,lo+sz-1, Math.min(lo + sz + sz-1,a.length-1));
+            }
+        }
+    }
+
+    // 自顶向下
     public static void sort(Comparable[] a) {
         aux = new Comparable[a.length];
+        sort(a,0,a.length-1);
     }
 
     private static void sort(Comparable[] a, int lo, int hi) {
