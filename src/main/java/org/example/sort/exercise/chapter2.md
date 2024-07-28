@@ -220,8 +220,8 @@ https://blog.csdn.net/weixin_34259232/article/details/94220647
 略
 ### 2.3.18
 三取样切分
-https://www.jianshu.com/p/4bf661f3cc04
+https://www.jianshu.com/p/4bf661f3cc04 TODO 动手实现以下
 ### 2.3.19
-同上
+同上 TODO 动手实现以下
 ### 2.3.20
 https://www.cnblogs.com/yongh/p/9652704.html  TODO 动手实现以下
