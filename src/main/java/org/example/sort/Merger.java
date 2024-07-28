@@ -86,16 +86,6 @@ public class Merger extends Example {
         show(a);
         assert isSorted(a);
     }
-
-    public static void test(int lo ,int mid,int hi,Comparable[] a){
-        for (int m = lo; m <= mid; m++){
-            aux[m] = a[m];
-        }
-        for (int n = mid+1; n <= hi;n++){
-            aux[n] = a[hi+ mid+1-n];
-        }
-        show(aux);
-    }
 }
 // 对于长度为N的任意数组，自动乡下的归并排序需要 NlgN/2~ NlogN次比较
 // 证明：
