@@ -5,14 +5,14 @@ public class Merger extends Example {
     private static Comparable[] aux;
 
     // 自底向上
-//    public static void sort1(Comparable[] a){
-//        aux = new Comparable[a.length];
-//        for(int sz = 1; sz < a.length; sz = sz + sz){
-//            for(int lo = 0; lo <a.length-sz; lo += sz){
-//                merge(a,lo,lo+sz-1, Math.min(lo + sz + sz-1,a.length-1));
-//            }
-//        }
-//    }
+    public static void sort1(Comparable[] a){
+        aux = new Comparable[a.length];
+        for(int sz = 1; sz < a.length; sz = sz + sz){
+            for(int lo = 0; lo <a.length-sz; lo += sz){
+                merge(a,lo,lo+sz-1, Math.min(lo + sz + sz-1,a.length-1));
+            }
+        }
+    }
 
     // 自顶向下
     public static void sort(Comparable[] a) {
@@ -37,7 +37,7 @@ public class Merger extends Example {
         int i = lo;
         int j = mid + 1;
 
-        for (int k = 0; k <= hi; k++) {
+        for (int k = lo; k <= hi; k++) {
             aux[k] = a[k];
         }
 
@@ -45,7 +45,7 @@ public class Merger extends Example {
             if (i > mid) {
                 a[k] = aux[j++];
             } else if (j > hi) {
-                a[k] = a[i++];
+                a[k] = aux[i++];
             } else if (less(aux[j], aux[i])) {
                 a[k] = aux[j++];
             } else {
@@ -56,10 +56,10 @@ public class Merger extends Example {
 
     public static void main(String[]args){
         String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
-        show(a);
+//        show(a);
         sort(a);
         show(a);
-//        assert isSorted(a);
+        assert isSorted(a);
     }
 }
 // 对于长度为N的任意数组，自动乡下的归并排序需要 NlgN/2~ NlogN次比较
