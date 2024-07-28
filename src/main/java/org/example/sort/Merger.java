@@ -33,7 +33,7 @@ public class Merger extends Example {
         // 如果a[mid] 小于等于 a[mid+1] 则2个、部分已经是有序的，不需要merger了
 
         if (less(a[mid + 1], a[mid])){
-            merge(a, lo, mid, hi);
+            merge2(a, lo, mid, hi);
             show(a);
         }
 
@@ -60,15 +60,41 @@ public class Merger extends Example {
         }
     }
 
+    // 优化后的merger  题目2.2.10
     public static void merge2(Comparable[] a, int lo, int mid, int hi){
+        for (int m = lo; m <= mid; m++){
+            aux[m] = a[m];
+        }
+        for (int n = mid+1; n <= hi;n++){
+            aux[n] = a[hi+ mid+1-n];
+        }
+        int i = lo;
+        int j = hi;
+        for (int k = lo; k <= hi; k++){
+            if (less(aux[j],aux[i])){
+                a[k] = aux[j--];
+            }else{
+                a[k] = aux[i++];
+            }
+        }
 
     }
 
     public static void main(String[]args){
         String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
         sort(a);
-//        show(a);
+        show(a);
         assert isSorted(a);
+    }
+
+    public static void test(int lo ,int mid,int hi,Comparable[] a){
+        for (int m = lo; m <= mid; m++){
+            aux[m] = a[m];
+        }
+        for (int n = mid+1; n <= hi;n++){
+            aux[n] = a[hi+ mid+1-n];
+        }
+        show(aux);
     }
 }
 // 对于长度为N的任意数组，自动乡下的归并排序需要 NlgN/2~ NlogN次比较
