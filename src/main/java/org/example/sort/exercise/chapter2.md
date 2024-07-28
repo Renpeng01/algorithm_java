@@ -164,10 +164,10 @@ leetcode 单链表排序
 ### 2.2.18
 
 ### 2.2.19
-leetCode 统计倒置数量
+leetCode 统计倒置数量, 统计merger时 需要交换的此时
 
 ### 2.2.20
-
+略
 ### 2.2.21
 https://blog.csdn.net/weixin_34259232/article/details/94220647
 ### 2.2.22
