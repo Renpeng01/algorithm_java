@@ -15,7 +15,12 @@ public class Merger extends Example {
         int mid = lo + (hi - lo) / 2;
         sort(a, lo, mid);
         sort(a, mid + 1, hi);
-        merge(a, lo, mid, hi);
+
+
+        // 如果a[mid] 小于等于 a[mid+1] 则2个、部分已经是有序的，不需要merger了
+        if (less(a[mid+1],a[mid])){
+            merge(a, lo, mid, hi);
+        }
     }
 
     public static void merge(Comparable[] a, int lo, int mid, int hi) {
@@ -50,3 +55,5 @@ public class Merger extends Example {
 // 效率：插入排序在数据基本有序时效率高，选择排序无论数据如何分布，效率都较低。
 // 稳定性：插入排序是稳定的，选择排序是不稳定的。
 // 元素移动：插入排序可能需要更多的元素移动，但选择排序每次只进行一次交换
+
+
