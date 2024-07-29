@@ -225,3 +225,9 @@ https://www.jianshu.com/p/4bf661f3cc04 TODO 动手实现以下
 同上 TODO 动手实现以下
 ### 2.3.20
 https://www.cnblogs.com/yongh/p/9652704.html  TODO 动手实现以下
+
+### 2.3.21 
+略
+### 2.3.22
+https://algs4.cs.princeton.edu/23quicksort/QuickX.java.html
+https://blog.csdn.net/Salmon1122/article/details/109667417
