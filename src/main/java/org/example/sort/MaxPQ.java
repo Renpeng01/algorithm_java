@@ -29,7 +29,6 @@ public class MaxPQ <Key extends Comparable<Key>> {
         return max;
     }
 
-    // 辅助函数
     private boolean less(int i,int j){
         return pq[i].compareTo(pq[j]) < 0;
     }
