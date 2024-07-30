@@ -1,12 +1,6 @@
 package org.example.sort;
 
-public class MaxPQ <Key extends Comparable<Key>> extends Example{
-//    private void swim(int k){
-//        while (k > 1 && less(k/2,k)){
-//            exch();
-//        }
-//    }
-
+public class MaxPQ <Key extends Comparable<Key>> {
     private Key[] pq;
     private int N;
 
